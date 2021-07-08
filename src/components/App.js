@@ -1,61 +1,45 @@
 import React from 'react';
-// import './App.css';
 import Header from './Header.js';
 import Main from './Main.js';
 import Footer from './Footer.js';
+import EditPopup from './EditPopup.js';
+import AddPopup from './AddPopup.js';
+import AvatarPopup from './AvatarPopup.js';
 
 function App() {
+
+  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
+  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
+  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
+
+  function handleEditProfileClick() {
+    setIsEditProfilePopupOpen(true);
+  }
+
+  function handleAddPlaceClick() {
+    setIsAddPlacePopupOpen(true);
+  }
+
+  function handleEditAvatarClick() {
+    setIsEditAvatarPopupOpen(true);
+  }
+
+  function closeAllPopups() {
+    setIsEditProfilePopupOpen(false);
+    setIsAddPlacePopupOpen(false);
+    setIsEditAvatarPopupOpen(false);
+  }
+
   return (
-    <div>
+    <>
       <Header />
-      <Main />
+      <Main onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick} onEditAvatar={handleEditAvatarClick} />
       <Footer />
+      <EditPopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} />
+      <AddPopup isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} />
+      <AvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} />
 
-      <div className="popup popup-edit">
-        <div className="popup__container">
-          <h2 className="popup__title">Редактировать профиль</h2>
-          <form className="popup__form" name="profile-edit" noValidate>
-            <fieldset className="popup__fieldset">
-              <input className="popup__input popup__input_title_name" id="name" type="text" name="name" placeholder="Имя" required minLength={2} maxLength={40} autoComplete="off" />
-              <span className="popup__error" id="name-error" />
-              <input className="popup__input popup__input_title_job" id="job" type="text" name="job" placeholder="О себе" required minLength={2} maxLength={200} autoComplete="off" />
-              <span className="popup__error" id="job-error" />
-              <button type="submit" className="popup__save-button">Сохранить</button>
-            </fieldset>
-          </form>
-          <button type="button" className="popup__close-button" />
-        </div>
-      </div>
-
-      <div className="popup popup-add">
-        <div className="popup__container">
-          <h2 className="popup__title">Новое место</h2>
-          <form className="popup__form" name="place-add" noValidate>
-            <fieldset className="popup__fieldset">
-              <input className="popup__input popup__input_title_place" id="place" type="text" name="place" placeholder="Название" required minLength={2} maxLength={30} autoComplete="off" />
-              <span className="popup__error" id="place-error" />
-              <input className="popup__input popup__input_title_link" id="link" type="url" name="link" placeholder="Ссылка на картинку" autoComplete="off" required />
-              <span className="popup__error" id="link-error" />
-              <button type="submit" className="popup__save-button popup__save-button_disabled">Создать</button>
-            </fieldset>
-          </form>
-          <button type="button" className="popup__close-button" />
-        </div>
-      </div>
-
-      <div className="popup popup-avatar">
-        <div className="popup__container">
-          <h2 className="popup__title">Обновить аватар</h2>
-          <form className="popup__form" name="place-avatar" noValidate>
-            <fieldset className="popup__fieldset">
-              <input className="popup__input popup__input_title_avatar" id="avatar" type="url" name="avatar" placeholder="Ссылка на аватар" autoComplete="off" required />
-              <span className="popup__error" id="avatar-error" />
-              <button type="submit" className="popup__save-button popup__save-button_disabled">Создать</button>
-            </fieldset>
-          </form>
-          <button type="button" className="popup__close-button" />
-        </div>
-      </div>
+      {/*
 
       <div className="popup popup-card">
         <div className="popup__container popup__container_card">
@@ -78,8 +62,9 @@ function App() {
           <button type="button" className="popup__close-button" />
         </div>
       </div>
-      <template id="card-template" />
-    </div>
+      <template id="card-template" /> */}
+
+    </>
   );
 }
 
