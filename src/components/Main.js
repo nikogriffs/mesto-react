@@ -1,5 +1,6 @@
 import React from 'react';
 import api from '../utils/Api.js';
+import Card from './Card.js';
 
 function Main(props) {
 
@@ -21,9 +22,6 @@ function Main(props) {
             });
     });
 
-
-
-
     return (
         <main>
             <section className="profile">
@@ -43,6 +41,15 @@ function Main(props) {
 
             <section className="places">
                 <ul className="places__list">
+                    {cards.map((card) => (
+                        <Card
+                            card={card}
+                            name={card.name}
+                            link={card.link}
+                            key={card._id}
+                            likes={card.likes}
+                            onCardClick={props.onCardClick} />
+                    ))}
                 </ul>
             </section>
         </main>
