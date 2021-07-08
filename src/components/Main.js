@@ -18,7 +18,7 @@ function Main(props) {
                 setCards(cards);
             })
             .catch((err) => {
-                console.log(err); // выведем ошибку в консоль
+                console.log(err);
             });
     });
 

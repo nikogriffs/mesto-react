@@ -41,11 +41,11 @@ function App() {
     <>
       <Header />
 
-      <Main 
-      onEditProfile={handleEditProfileClick} 
-      onAddPlace={handleAddPlaceClick} 
-      onEditAvatar={handleEditAvatarClick} 
-      onCardClick={handleCardClick} />
+      <Main
+        onEditProfile={handleEditProfileClick}
+        onAddPlace={handleAddPlaceClick}
+        onEditAvatar={handleEditAvatarClick}
+        onCardClick={handleCardClick} />
 
       <Footer />
       <EditPopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} />
