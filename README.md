@@ -5,12 +5,12 @@
 
 ## **Инструкция:**
 Одностраничный сайт.
-[Ссылка на GitPages](https://nikogriffs.github.io/mesto/)
+[Ссылка на GitPages](https://nikogriffs.github.io/mesto-react/)
 
 ## **Планы по доработке:**
 Изучение JavaScript и React. Доработка сайта по парадигме ООП. Доработка плавности переходов между брэйкпоинтами. Доработка функционала с помощью более сложных возможностей JS. WebPack. API. React. Продолжить практиковаться с README.
 
-In the project directory, you can run:
+**In the project directory, you can run:**
 
 ### `npm start`
 
