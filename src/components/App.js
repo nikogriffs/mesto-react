@@ -2,8 +2,8 @@ import React from 'react';
 import Header from './Header.js';
 import Main from './Main.js';
 import Footer from './Footer.js';
-import EditPopup from './EditPopup.js';
-import AddPopup from './AddPopup.js';
+import EditProfilePopup from './EditProfilePopup.js';
+import AddPlacePopup from './AddPlacePopup.js';
 import AvatarPopup from './AvatarPopup.js';
 import ImagePopup from './ImagePopup.js';
 
@@ -48,8 +48,8 @@ function App() {
         onCardClick={handleCardClick} />
 
       <Footer />
-      <EditPopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} />
-      <AddPopup isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} />
+      <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} />
+      <AddPlacePopup isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} />
       <AvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} />
       <ImagePopup card={selectedCard} onClose={closeAllPopups} />
 

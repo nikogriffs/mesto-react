@@ -1,7 +1,7 @@
 import React from 'react';
 import PopupWithForm from './PopupWithForm.js';
 
-function EditPopup(props) {
+function EditProfilePopup(props) {
     return (
         <PopupWithForm name="edit" title="Редактировать профиль" button="Сохранить" isOpen={props.isOpen} onClose={props.onClose}>
 
@@ -35,4 +35,4 @@ function EditPopup(props) {
     )
 }
 
-export default EditPopup;
+export default EditProfilePopup;

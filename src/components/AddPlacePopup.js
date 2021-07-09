@@ -1,7 +1,7 @@
 import React from 'react';
 import PopupWithForm from './PopupWithForm.js';
 
-function AddPopup(props) {
+function AddPlacePopup(props) {
     return (
         <PopupWithForm name="add" title="Новое место" button="Создать" isOpen={props.isOpen} onClose={props.onClose}>
 
@@ -33,4 +33,4 @@ function AddPopup(props) {
     )
 }
 
-export default AddPopup;
+export default AddPlacePopup;
