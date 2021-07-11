@@ -38,4 +38,4 @@ function AvatarPopup(props) {
     )
 }
 
-export default AvatarPopup;
+export default EditAvatarPopup;
